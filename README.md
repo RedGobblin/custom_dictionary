@@ -1,6 +1,6 @@
 # custom_dictionary
 Make a dictionary of all permutations and combinations of a word.
-copy the script wherever you want and reach the same directory in terminal then type
+Copy(permutation) the script wherever you want and reach the same directory in terminal then type
     
     python3 permutation <word> <max length>
 
