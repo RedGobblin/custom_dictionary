@@ -1,0 +1,39 @@
+#!/usr/bin/env python
+import itertools
+import os
+import sys
+try:
+    script,word,length = sys.argv
+    perm = []
+    for i in itertools.permutations(word,int(length)):
+        r = ''.join(i)
+        perm.append(r)
+
+    print(perm)
+    file1 = input("Enter filename: ")
+    x = file1.split(".")
+
+    if(len(x) == 2):                #make file extention to .txt
+        if (x[1] == "txt"):
+            pass
+        else:                       #if file extension is other than .txt
+            x.pop(len(x)-1)
+            x.append(".txt")
+            file1 = x[0] + x[1]
+    else:
+        file1 = file1 + ".txt"
+
+    f = open(file1,'w')
+    for k in perm:
+        f.write(k)
+        f.write("\n")
+    
+    if (os.path.exists(file1)):
+        print("File created successfully")
+    else:
+        print("File is not created")
+    f.close()
+
+except ValueError:
+    print("More or less arguments given")
+    print("python3 permutation <word> <max length>")
