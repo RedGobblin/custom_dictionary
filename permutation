@@ -9,7 +9,6 @@ try:
         r = ''.join(i)
         perm.append(r)
 
-    print(perm)
     file1 = input("Enter filename: ")
     x = file1.split(".")
 
