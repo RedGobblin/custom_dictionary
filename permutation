@@ -3,11 +3,13 @@ import itertools
 import os
 import sys
 try:
-    script,word,length = sys.argv
+    script,word,min_len,max_len = sys.argv
     perm = []
-    for i in itertools.permutations(word,int(length)):
-        r = ''.join(i)
-        perm.append(r)
+    min_len,max_len = int(min_len),int(max_len)
+    for j in range(min_len,max_len + 1): 
+        for i in itertools.permutations(word,j):
+            r = ''.join(i)
+            perm.append(r)
 
     file1 = input("Enter filename: ")
     x = file1.split(".")
@@ -35,4 +37,4 @@ try:
 
 except ValueError:
     print("More or less arguments given")
-    print("python3 permutation <word> <max length>")
+    print("python3 permutation <word> <min length> <max length>")
